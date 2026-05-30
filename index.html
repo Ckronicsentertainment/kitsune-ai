@@ -16,19 +16,22 @@
 }
 
 body{
-    height:100vh;
     background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+    color:white;
+    overflow-x:hidden;
+}
+
+.hero{
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    color:white;
-    overflow:hidden;
+    text-align:center;
+    padding:40px;
 }
 
 .container{
-    text-align:center;
-    max-width:700px;
-    padding:40px;
+    max-width:900px;
 }
 
 .logo{
@@ -37,30 +40,42 @@ body{
     background:linear-gradient(90deg,#ff6bcb,#8b5cf6,#38bdf8);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    margin-bottom:15px;
-}
-
-.tagline{
-    font-size:1.2rem;
-    color:#cbd5e1;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 .coming{
-    font-size:3rem;
-    font-weight:700;
+    font-size:3.5rem;
     margin-bottom:20px;
+}
+
+.tagline{
+    font-size:1.3rem;
+    color:#cbd5e1;
+    margin-bottom:30px;
 }
 
 .desc{
     color:#94a3b8;
     line-height:1.8;
-    margin-bottom:35px;
+    margin-bottom:25px;
+}
+
+#countdown{
+    font-size:2rem;
+    font-weight:700;
+    color:#8b5cf6;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 .button{
-    display:inline-block;
-    padding:14px 32px;
+    padding:14px 30px;
     border-radius:50px;
     text-decoration:none;
     color:white;
@@ -70,52 +85,118 @@ body{
 
 .button:hover{
     transform:translateY(-3px);
-    box-shadow:0 0 25px rgba(236,72,153,.5);
 }
 
-.glow{
-    position:absolute;
-    width:400px;
-    height:400px;
-    background:#8b5cf6;
-    filter:blur(150px);
-    opacity:.15;
-    border-radius:50%;
+.features{
+    padding:100px 30px;
+    text-align:center;
 }
 
-.glow:nth-child(1){
-    top:-100px;
-    left:-100px;
+.features h2{
+    font-size:2.5rem;
+    margin-bottom:50px;
 }
 
-.glow:nth-child(2){
-    bottom:-100px;
-    right:-100px;
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    width:280px;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#94a3b8;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#64748b;
 }
 </style>
 </head>
 <body>
 
-<div class="glow"></div>
-<div class="glow"></div>
-
+<section class="hero">
 <div class="container">
-    <div class="logo">🦊 Kitsune AI</div>
 
-    <div class="coming">Coming Soon</div>
+<div class="logo">🦊 Kitsune AI</div>
 
-    <p class="tagline">
-        The next generation of intelligent AI experiences.
-    </p>
+<h1 class="coming">Coming Soon</h1>
 
-    <p class="desc">
-        Kitsune AI is currently in development. We're building a powerful,
-        fast, and creative AI assistant designed to help you work, learn,
-        and create smarter than ever before.
-    </p>
+<p class="tagline">
+The next generation of intelligent AI experiences.
+</p>
 
-    <a href="#" class="button">Launching Soon</a>
+<p class="desc">
+Kitsune AI is currently being developed to provide powerful AI tools,
+creative assistance, and intelligent conversations.
+</p>
+
+<div id="countdown">Loading...</div>
+
+<div class="buttons">
+<a href="#" class="button">Launching Soon</a>
+<a href="https://discord.gg/YOURINVITE" class="button">Join Discord</a>
 </div>
+
+</div>
+</section>
+
+<section class="features">
+<h2>What To Expect</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>⚡ Fast Responses</h3>
+<p>Lightning-fast AI powered conversations.</p>
+</div>
+
+<div class="card">
+<h3>🧠 Smart Reasoning</h3>
+<p>Advanced intelligence for solving problems and answering questions.</p>
+</div>
+
+<div class="card">
+<h3>🎨 Creative Tools</h3>
+<p>Create content, ideas, and projects with ease.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Kitsune AI. All Rights Reserved.
+</footer>
+
+<script>
+const launchDate = new Date("December 31, 2026 00:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const distance = launchDate - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const mins = Math.floor((distance % (1000*60*60)) / (1000*60));
+
+    document.getElementById("countdown").innerHTML =
+        `${days} Days ${hours} Hours ${mins} Minutes`;
+},1000);
+</script>
 
 </body>
 </html>
