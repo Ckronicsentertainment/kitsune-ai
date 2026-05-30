@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitsune AI - Coming Soon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    max-width:700px;
+    padding:40px;
+}
+
+.logo{
+    font-size:4rem;
+    font-weight:700;
+    background:linear-gradient(90deg,#ff6bcb,#8b5cf6,#38bdf8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:15px;
+}
+
+.tagline{
+    font-size:1.2rem;
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+.coming{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.desc{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.button{
+    display:inline-block;
+    padding:14px 32px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(90deg,#8b5cf6,#ec4899);
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(236,72,153,.5);
+}
+
+.glow{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:#8b5cf6;
+    filter:blur(150px);
+    opacity:.15;
+    border-radius:50%;
+}
+
+.glow:nth-child(1){
+    top:-100px;
+    left:-100px;
+}
+
+.glow:nth-child(2){
+    bottom:-100px;
+    right:-100px;
+}
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+<div class="glow"></div>
+
+<div class="container">
+    <div class="logo">🦊 Kitsune AI</div>
+
+    <div class="coming">Coming Soon</div>
+
+    <p class="tagline">
+        The next generation of intelligent AI experiences.
+    </p>
+
+    <p class="desc">
+        Kitsune AI is currently in development. We're building a powerful,
+        fast, and creative AI assistant designed to help you work, learn,
+        and create smarter than ever before.
+    </p>
+
+    <a href="#" class="button">Launching Soon</a>
+</div>
+
+</body>
+</html>
